@@ -69,6 +69,7 @@ for (let i = 0; i < djst.length-1; i++) {
 console.log("Результат:")
 let ans;
 for(let i=0;i<data.length;i++) data=data.replace("^","**");
+
 if(djst[djst.length-1]!='^') {
     ans = eval(`${temp[0]}
     ${djst[djst.length - 1]}
@@ -79,7 +80,6 @@ else {
     ans=Math.pow(temp[0], temp[1])
     console.log(ans);
 }
-console.log(eval(data))
 console.log("Проверка на совместимость ответов:"+(eval(data)==ans));
 //Тесты:
 //( 6 + 10 - 4 ) / ( 1 + 1 * 2 ) + 1
