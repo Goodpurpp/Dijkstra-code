@@ -67,12 +67,21 @@ for (let i = 0; i < djst.length-1; i++) {
     }
 }
 console.log("Результат:")
-if(djst[djst.length-1]!='^')
-    console.log(eval(`${temp[0]} ${djst[djst.length-1]} ${temp[1]}`));
-else
-    console.log(Math.pow(temp[0],temp[1]));
+let ans;
+for(let i=0;i<data.length;i++) data=data.replace("^","**");
+if(djst[djst.length-1]!='^') {
+    ans = eval(`${temp[0]}
+    ${djst[djst.length - 1]}
+    ${temp[1]}`)
+    console.log(ans);
+}
+else {
+    ans=Math.pow(temp[0], temp[1])
+    console.log(ans);
+}
+console.log(eval(data))
+console.log("Проверка на совместимость ответов:"+(eval(data)==ans));
 //Тесты:
-//( 8 + 2 * 5 ) / ( 1 + 3 * 2 - 4 ) - 5 + ( 9 / ( 1 + 2 ) + 1 ) * 3
 //( 6 + 10 - 4 ) / ( 1 + 1 * 2 ) + 1
 //( ( 7 - 6.35 ) / 6.5 + 9.9 ) / ( ( 1.2 / 36 + 1.2 / 0.25 - 21 / 16 ) / ( 169 / 24 ) )
 // 2 ^ 2 ^ 2
